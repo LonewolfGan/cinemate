@@ -1,0 +1,32 @@
+API Key: eebe77f5880913698403ebf7020dbe7c
+
+API Access Token: eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlZWJlNzdmNTg4MDkxMzY5ODQwM2ViZjcwMjBkYmU3YyIsIm5iZiI6MTc1NTYwOTM2NS4yOTIsInN1YiI6IjY4YTQ3OTE1NThjMGJmMTUxZGNhNzdlMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.i30c-cmmYFsveSbok-w9Irm1zxDsO9HFukIu2dQj0J8
+
+Base URL: https://api.themoviedb.org/3
+
+options = {
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlZWJlNzdmNTg4MDkxMzY5ODQwM2ViZjcwMjBkYmU3YyIsIm5iZiI6MTc1NTYwOTM2NS4yOTIsInN1YiI6IjY4YTQ3OTE1NThjMGJmMTUxZGNhNzdlMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.i30c-cmmYFsveSbok-w9Irm1zxDsO9HFukIu2dQj0J8'
+  }
+}
+
+Individual: 
+https://api.themoviedb.org/3/movie/{movie_id}?language=en-US?api_key=eebe77f5880913698403ebf7020dbe7c
+
+
+Now Playing: 
+https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1?api_key=eebe77f5880913698403ebf7020dbe7c
+
+Search: 
+https://api.themoviedb.org/3/search/movie?query={movie_name}&include_adult=false&language=en-US&page=1?api_key=eebe77f5880913698403ebf7020dbe7c
+
+Popular: 
+https://api.themoviedb.org/3/movie/popular?language=en-US&page=1?api_key=eebe77f5880913698403ebf7020dbe7c
+
+Top Rated:
+https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1?api_key=eebe77f5880913698403ebf7020dbe7c
+
+Upcoming:
+https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1?api_key=eebe77f5880913698403ebf7020dbe7c
