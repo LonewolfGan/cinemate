@@ -5,7 +5,7 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="App">
+    <div className="grain" style={{ backgroundColor: "#080808", minHeight: "100vh" }}>
       <Header />
       <AllRoutes />
       <Footer />
