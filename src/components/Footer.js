@@ -36,9 +36,9 @@ export const Footer = () => {
         <div>
           <p className="text-[10px] uppercase tracking-[0.22em] text-zinc-600 mb-5">Legal</p>
           <ul className="space-y-3 text-xs text-zinc-500">
-            <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Cookie Preferences</a></li>
+            <li><button className="hover:text-white transition-colors">Privacy Policy</button></li>
+            <li><button className="hover:text-white transition-colors">Terms of Service</button></li>
+            <li><button className="hover:text-white transition-colors">Cookie Preferences</button></li>
           </ul>
         </div>
       </div>

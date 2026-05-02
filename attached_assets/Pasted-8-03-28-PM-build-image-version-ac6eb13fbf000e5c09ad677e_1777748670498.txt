@@ -1,0 +1,100 @@
+8:03:28 PM: build-image version: ac6eb13fbf000e5c09ad677efd8b7c3c2d0142b6 (noble-new-builds)
+8:03:28 PM: buildbot version: 1e1f172b82fc46a7a7b4b14d04d14163b44b9b01
+8:03:29 PM: Building with cache
+8:03:29 PM: Starting to prepare the repo for build
+8:03:29 PM: Preparing Git Reference refs/heads/main
+8:03:30 PM: Installing dependencies
+8:03:30 PM: mise ~/.config/mise/config.toml tools: python@3.14.3
+8:03:30 PM: mise ~/.config/mise/config.toml tools: ruby@3.4.8
+8:03:30 PM: mise ~/.config/mise/config.toml tools: go@1.26.2
+8:03:31 PM: v22.22.2 is already installed.
+8:03:31 PM: Now using node v22.22.2 (npm v10.9.7)
+8:03:31 PM: Enabling Node.js Corepack
+8:03:31 PM: No npm workspaces detected
+8:03:31 PM: Installing npm packages using npm version 10.9.7
+8:03:34 PM: added 4 packages, and changed 1 package in 3s
+8:03:34 PM: npm packages installed
+8:03:34 PM: Successfully installed dependencies
+8:03:35 PM: Detected 1 framework(s)
+8:03:35 PM: "create-react-app" at version "5.0.1"
+8:03:35 PM: Starting build script
+8:03:35 PM: Section completed: initializing
+8:03:37 PM: ​
+8:03:37 PM: Netlify Build                                                 
+8:03:37 PM: ────────────────────────────────────────────────────────────────
+8:03:37 PM: ​
+8:03:37 PM: ❯ Version
+8:03:37 PM:   @netlify/build 35.13.4
+8:03:37 PM: ​
+8:03:37 PM: ❯ Flags
+8:03:37 PM:   accountId: 6894b6e084748300785baa80
+8:03:37 PM:   baseRelDir: true
+8:03:37 PM:   buildId: 69f64a7fb0c4b500087e8b4b
+8:03:37 PM:   deployId: 69f64a7fb0c4b500087e8b4d
+8:03:37 PM: ​
+8:03:37 PM: ❯ Current directory
+8:03:37 PM:   /opt/build/repo
+8:03:37 PM: ​
+8:03:37 PM: ❯ Config file
+8:03:37 PM:   /opt/build/repo/netlify.toml
+8:03:37 PM: ​
+8:03:37 PM: ❯ Context
+8:03:37 PM:   production
+8:03:37 PM: ​
+8:03:37 PM: Build command from Netlify app                                
+8:03:37 PM: ────────────────────────────────────────────────────────────────
+8:03:37 PM: ​
+8:03:37 PM: $ npm run build
+8:03:37 PM: > cinemate@0.1.0 prebuild
+8:03:37 PM: > node scripts/generate-sitemap.js
+8:03:37 PM: 🎬  Cinemate sitemap generator starting…
+8:03:37 PM:   Found 119 unique movie pages from TMDB.
+8:03:37 PM: ✅  Sitemap written to public/sitemap.xml (123 URLs)
+8:03:37 PM: > cinemate@0.1.0 build
+8:03:37 PM: > react-scripts build
+8:03:40 PM: Creating an optimized production build...
+8:03:40 PM: Browserslist: browsers data (caniuse-lite) is 9 months old. Please run:
+8:03:40 PM:   npx update-browserslist-db@latest
+8:03:40 PM:   Why you should do it regularly: https://github.com/browserslist/update-db#readme
+8:03:48 PM: Browserslist: browsers data (caniuse-lite) is 9 months old. Please run:
+8:03:48 PM:   npx update-browserslist-db@latest
+8:03:48 PM:   Why you should do it regularly: https://github.com/browserslist/update-db#readme
+8:03:49 PM: Failed during stage 'building site': Build script returned non-zero exit code: 2 (https://ntl.fyi/exit-code-2)
+8:03:49 PM: 
+8:03:49 PM: Treating warnings as errors because process.env.CI = true.
+8:03:49 PM: Most CI servers set it automatically.
+8:03:49 PM: 
+8:03:49 PM: Failed to compile.
+8:03:49 PM: 
+8:03:49 PM: [eslint]
+8:03:49 PM: src/components/Footer.js
+8:03:49 PM:   Line 39:17:  The href attribute requires a valid value to be accessible. Provide a valid, navigable address as the href value. If you cannot provide a valid href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md  jsx-a11y/anchor-is-valid
+8:03:49 PM:   Line 40:17:  The href attribute requires a valid value to be accessible. Provide a valid, navigable address as the href value. If you cannot provide a valid href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md  jsx-a11y/anchor-is-valid
+8:03:49 PM:   Line 41:17:  The href attribute requires a valid value to be accessible. Provide a valid, navigable address as the href value. If you cannot provide a valid href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md  jsx-a11y/anchor-is-valid
+8:03:49 PM: ​
+8:03:49 PM: "build.command" failed                                        
+8:03:49 PM: ────────────────────────────────────────────────────────────────
+8:03:49 PM: ​
+8:03:49 PM:   Error message
+8:03:49 PM:   Command failed with exit code 1: npm run build (https://ntl.fyi/exit-code-1)
+8:03:49 PM: ​
+8:03:49 PM:   Error location
+8:03:49 PM:   In Build command from Netlify app:
+8:03:49 PM:   npm run build
+8:03:49 PM: ​
+8:03:49 PM:   Resolved config
+8:03:49 PM:   build:
+8:03:49 PM:     command: npm run build
+8:03:49 PM:     commandOrigin: ui
+8:03:49 PM:     environment:
+8:03:49 PM:       - REACT_APP_API_KEY
+8:03:49 PM:     publish: /opt/build/repo/build
+8:03:49 PM:     publishOrigin: ui
+8:03:49 PM:   redirects:
+8:03:49 PM:     - from: /*
+      status: 200
+      to: /index.html
+  redirectsOrigin: config
+8:03:49 PM: Build failed due to a user error: Build script returned non-zero exit code: 2
+8:03:49 PM: Failing build: Failed to build site
+8:03:50 PM: Finished processing build request in 20.932s

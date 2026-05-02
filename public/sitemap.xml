@@ -586,20 +586,6 @@
   </url>
 
   <url>
-    <loc>https://cinematelone.netlify.app/movies/412201</loc>
-    <lastmod>2017-03-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://cinematelone.netlify.app/movies/387592</loc>
-    <lastmod>2018-01-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
     <loc>https://cinematelone.netlify.app/movies/1304313</loc>
     <lastmod>2026-04-15</lastmod>
     <changefreq>monthly</changefreq>
@@ -861,6 +847,20 @@
   <url>
     <loc>https://cinematelone.netlify.app/movies/1429520</loc>
     <lastmod>2025-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://cinematelone.netlify.app/movies/412201</loc>
+    <lastmod>2017-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://cinematelone.netlify.app/movies/387592</loc>
+    <lastmod>2018-01-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
