@@ -73,10 +73,10 @@ export function Noir() {
         <div className="flex items-center gap-12">
           <a href="#" className="text-2xl font-bold tracking-tighter flex items-center gap-2">
             <span className="text-white">Cine</span>
-            <span className="text-[#0d9488]">mate</span>
+            <span className="text-[#dc2626]">mate</span>
           </a>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-            <a href="#" className="text-white hover:text-[#0d9488] transition-colors relative after:content-[''] after:absolute after:-bottom-5 after:left-0 after:w-full after:h-[2px] after:bg-[#0d9488]">Home</a>
+            <a href="#" className="text-white hover:text-[#dc2626] transition-colors relative after:content-[''] after:absolute after:-bottom-5 after:left-0 after:w-full after:h-[2px] after:bg-[#dc2626]">Home</a>
             <a href="#" className="hover:text-white transition-colors">Popular</a>
             <a href="#" className="hover:text-white transition-colors">Top Rated</a>
             <a href="#" className="hover:text-white transition-colors">Upcoming</a>
@@ -85,18 +85,18 @@ export function Noir() {
 
         <div className="flex items-center gap-6">
           <div className="hidden md:flex relative group">
-            <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-[#0d9488] transition-colors" />
+            <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-[#dc2626] transition-colors" />
             <input 
               type="text" 
               placeholder="Search movies..." 
-              className="bg-black/40 border border-white/10 rounded-full py-2 pl-10 pr-4 text-sm w-64 focus:outline-none focus:border-[#0d9488]/50 focus:bg-black/60 transition-all placeholder:text-slate-500"
+              className="bg-black/40 border border-white/10 rounded-full py-2 pl-10 pr-4 text-sm w-64 focus:outline-none focus:border-[#dc2626]/50 focus:bg-black/60 transition-all placeholder:text-slate-500"
             />
           </div>
           <button className="text-slate-300 hover:text-white transition-colors relative">
             <Bell className="w-5 h-5" />
             <span className="absolute top-0 right-0 w-2 h-2 bg-[#fbbf24] rounded-full border border-[#030014]"></span>
           </button>
-          <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-[#0d9488] to-purple-600 p-[2px] cursor-pointer">
+          <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-[#dc2626] to-purple-600 p-[2px] cursor-pointer">
             <img src="https://picsum.photos/seed/avatar/100/100" alt="Profile" className="w-full h-full rounded-full object-cover border border-black" />
           </div>
           <button className="md:hidden text-white">
@@ -177,7 +177,7 @@ export function Noir() {
                     </div>
                   </div>
                   <div className="absolute bottom-0 left-0 w-full h-1 bg-white/20">
-                    <div className="h-full bg-[#0d9488]" style={{ width: `${Math.random() * 60 + 20}%` }}></div>
+                    <div className="h-full bg-[#dc2626]" style={{ width: `${Math.random() * 60 + 20}%` }}></div>
                   </div>
                 </div>
                 <div className="flex justify-between items-start">
@@ -200,7 +200,7 @@ export function Noir() {
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-3xl font-bold text-white relative inline-block">
               New Releases
-              <span className="absolute -bottom-2 left-0 w-1/2 h-1 bg-[#0d9488] rounded-full"></span>
+              <span className="absolute -bottom-2 left-0 w-1/2 h-1 bg-[#dc2626] rounded-full"></span>
             </h2>
             <button className="text-slate-400 hover:text-white flex items-center gap-1 text-sm font-medium transition-colors">
               Explore All <ChevronRight className="w-4 h-4" />
@@ -223,21 +223,21 @@ export function Noir() {
                   </div>
                   
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 backdrop-blur-[2px]">
-                    <button className="w-12 h-12 rounded-full bg-[#0d9488] flex items-center justify-center shadow-[0_0_20px_rgba(13,148,136,0.6)] transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                    <button className="w-12 h-12 rounded-full bg-[#dc2626] flex items-center justify-center shadow-[0_0_20px_rgba(220,38,38,0.6)] transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
                       <Play className="w-5 h-5 text-white fill-current ml-1" />
                     </button>
                   </div>
                 </div>
                 
                 <div className="p-4 flex flex-col flex-grow">
-                  <h3 className="font-bold text-white text-base leading-tight mb-1 line-clamp-1 group-hover:text-[#0d9488] transition-colors">{movie.title}</h3>
+                  <h3 className="font-bold text-white text-base leading-tight mb-1 line-clamp-1 group-hover:text-[#dc2626] transition-colors">{movie.title}</h3>
                   <div className="flex items-center gap-2 text-[11px] text-slate-400 mb-2">
                     <span>{movie.year}</span>
                     <span className="w-1 h-1 rounded-full bg-slate-600"></span>
                     <span>{movie.duration}</span>
                   </div>
                   <p className="text-xs text-slate-500 line-clamp-2 mb-3 flex-grow">{movie.description}</p>
-                  <button className="text-xs font-semibold text-white uppercase tracking-wider hover:text-[#0d9488] transition-colors w-full text-left mt-auto">
+                  <button className="text-xs font-semibold text-white uppercase tracking-wider hover:text-[#dc2626] transition-colors w-full text-left mt-auto">
                     Read more →
                   </button>
                 </div>
@@ -254,7 +254,7 @@ export function Noir() {
           <div className="col-span-1 md:col-span-2">
             <a href="#" className="text-2xl font-bold tracking-tighter flex items-center gap-2 mb-4">
               <span className="text-white">Cine</span>
-              <span className="text-[#0d9488]">mate</span>
+              <span className="text-[#dc2626]">mate</span>
             </a>
             <p className="text-slate-400 text-sm max-w-sm mb-6">
               Your premium destination for immersive cinematic experiences. Discover, track, and dive into the world of film.
@@ -263,18 +263,18 @@ export function Noir() {
           <div>
             <h4 className="text-white font-semibold mb-4">Explore</h4>
             <ul className="space-y-2 text-sm text-slate-400">
-              <li><a href="#" className="hover:text-[#0d9488] transition-colors">Home</a></li>
-              <li><a href="#" className="hover:text-[#0d9488] transition-colors">Top Rated</a></li>
-              <li><a href="#" className="hover:text-[#0d9488] transition-colors">New Releases</a></li>
-              <li><a href="#" className="hover:text-[#0d9488] transition-colors">Coming Soon</a></li>
+              <li><a href="#" className="hover:text-[#dc2626] transition-colors">Home</a></li>
+              <li><a href="#" className="hover:text-[#dc2626] transition-colors">Top Rated</a></li>
+              <li><a href="#" className="hover:text-[#dc2626] transition-colors">New Releases</a></li>
+              <li><a href="#" className="hover:text-[#dc2626] transition-colors">Coming Soon</a></li>
             </ul>
           </div>
           <div>
             <h4 className="text-white font-semibold mb-4">Legal</h4>
             <ul className="space-y-2 text-sm text-slate-400">
-              <li><a href="#" className="hover:text-[#0d9488] transition-colors">Terms of Service</a></li>
-              <li><a href="#" className="hover:text-[#0d9488] transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-[#0d9488] transition-colors">Cookie Preferences</a></li>
+              <li><a href="#" className="hover:text-[#dc2626] transition-colors">Terms of Service</a></li>
+              <li><a href="#" className="hover:text-[#dc2626] transition-colors">Privacy Policy</a></li>
+              <li><a href="#" className="hover:text-[#dc2626] transition-colors">Cookie Preferences</a></li>
             </ul>
           </div>
         </div>
@@ -283,7 +283,7 @@ export function Noir() {
           <div className="flex items-center gap-4 mt-4 md:mt-0">
             <a href="#" className="hover:text-white transition-colors">Twitter</a>
             <a href="#" className="hover:text-white transition-colors">Instagram</a>
-            <a href="#" className="hover:text-[#0d9488] transition-colors">Discord</a>
+            <a href="#" className="hover:text-[#dc2626] transition-colors">Discord</a>
           </div>
         </div>
       </footer>

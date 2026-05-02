@@ -54,29 +54,29 @@ const MOVIES = [
 
 export function DarkLuxury() {
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-zinc-300 font-sans selection:bg-[#d4af37] selection:text-black pb-24">
+    <div className="min-h-screen bg-[#0a0a0a] text-zinc-300 font-sans selection:bg-[#dc2626] selection:text-white pb-24">
       <style dangerouslySetInnerHTML={{__html: `
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500&display=swap');
         .font-serif { font-family: 'Playfair Display', serif; }
         .font-sans { font-family: 'Inter', sans-serif; }
-        .gold-gradient { background: linear-gradient(135deg, #d4af37 0%, #aa8529 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .text-gold { color: #d4af37; }
-        .border-gold { border-color: rgba(212, 175, 55, 0.3); }
-        .bg-gold { background-color: #d4af37; }
-        .hover-gold:hover { color: #d4af37; }
+        .gold-gradient { background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .text-gold { color: #dc2626; }
+        .border-gold { border-color: rgba(220, 38, 38, 0.3); }
+        .bg-gold { background-color: #dc2626; }
+        .hover-gold:hover { color: #dc2626; }
       `}} />
 
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-gradient-to-b from-[#0a0a0a] to-transparent pt-6 pb-12 px-8 lg:px-16 flex justify-between items-center transition-all duration-300">
         <div className="flex items-center gap-12">
           <div className="font-serif text-3xl font-bold tracking-wider text-white flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full border border-[#d4af37] flex items-center justify-center">
-              <div className="w-3 h-3 bg-[#d4af37] rounded-full" />
+            <div className="w-8 h-8 rounded-full border border-[#dc2626] flex items-center justify-center">
+              <div className="w-3 h-3 bg-[#dc2626] rounded-full" />
             </div>
             CINEMATE
           </div>
           <div className="hidden md:flex gap-8 text-sm tracking-widest uppercase">
-            <a href="#" className="text-white border-b border-[#d4af37] pb-1">Home</a>
+            <a href="#" className="text-white border-b border-[#dc2626] pb-1">Home</a>
             <a href="#" className="text-zinc-500 hover:text-white transition-colors pb-1">Popular</a>
             <a href="#" className="text-zinc-500 hover:text-white transition-colors pb-1">Top Rated</a>
             <a href="#" className="text-zinc-500 hover:text-white transition-colors pb-1">Upcoming</a>
@@ -105,9 +105,9 @@ export function DarkLuxury() {
         </div>
         
         <div className="relative h-full flex flex-col justify-end px-8 lg:px-16 pb-24 max-w-4xl">
-          <div className="flex items-center gap-4 mb-6 text-xs uppercase tracking-[0.3em] text-[#d4af37]">
+          <div className="flex items-center gap-4 mb-6 text-xs uppercase tracking-[0.3em] text-[#dc2626]">
             <span>Now Showing</span>
-            <div className="w-12 h-[1px] bg-[#d4af37]" />
+            <div className="w-12 h-[1px] bg-[#dc2626]" />
             <span>2024</span>
           </div>
           
@@ -120,8 +120,8 @@ export function DarkLuxury() {
           </p>
           
           <div className="flex items-center gap-6">
-            <button className="group flex items-center justify-center w-16 h-16 rounded-full border border-white/20 hover:border-[#d4af37] bg-white/5 backdrop-blur-sm transition-all duration-500">
-              <Play className="w-6 h-6 text-white group-hover:text-[#d4af37] ml-1 transition-colors" />
+            <button className="group flex items-center justify-center w-16 h-16 rounded-full border border-white/20 hover:border-[#dc2626] bg-white/5 backdrop-blur-sm transition-all duration-500">
+              <Play className="w-6 h-6 text-white group-hover:text-[#dc2626] ml-1 transition-colors" />
             </button>
             <span className="text-sm tracking-widest uppercase text-zinc-300 hover:text-white cursor-pointer transition-colors border-b border-transparent hover:border-white pb-1">
               Watch Trailer
@@ -137,7 +137,7 @@ export function DarkLuxury() {
             <h2 className="font-serif text-4xl text-white mb-4">Curated Selection</h2>
             <p className="text-zinc-500 font-light tracking-wide text-sm uppercase">Cinema as an art form</p>
           </div>
-          <button className="flex items-center gap-2 text-sm tracking-widest uppercase text-[#d4af37] hover:text-white transition-colors group">
+          <button className="flex items-center gap-2 text-sm tracking-widest uppercase text-[#dc2626] hover:text-white transition-colors group">
             Explore All <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
@@ -152,15 +152,15 @@ export function DarkLuxury() {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center backdrop-blur-[2px]">
-                  <div className="w-16 h-16 rounded-full border-2 border-[#d4af37] flex items-center justify-center transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-100">
-                    <span className="text-[#d4af37] text-xs uppercase tracking-widest">View</span>
+                  <div className="w-16 h-16 rounded-full border-2 border-[#dc2626] flex items-center justify-center transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-100">
+                    <span className="text-[#dc2626] text-xs uppercase tracking-widest">View</span>
                   </div>
                 </div>
               </div>
               
               <div className="space-y-3">
                 <div className="flex justify-between items-start">
-                  <h3 className="font-serif text-2xl text-white group-hover:text-[#d4af37] transition-colors">
+                  <h3 className="font-serif text-2xl text-white group-hover:text-[#dc2626] transition-colors">
                     {movie.title}
                   </h3>
                   <span className="text-xs tracking-widest text-zinc-500">{movie.year}</span>
@@ -171,8 +171,8 @@ export function DarkLuxury() {
                   {movie.description}
                 </p>
                 <div className="pt-2">
-                  <span className="text-xs uppercase tracking-[0.2em] text-[#d4af37] opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center gap-2">
-                    Read More <div className="w-8 h-[1px] bg-[#d4af37]" />
+                  <span className="text-xs uppercase tracking-[0.2em] text-[#dc2626] opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center gap-2">
+                    Read More <div className="w-8 h-[1px] bg-[#dc2626]" />
                   </span>
                 </div>
               </div>
