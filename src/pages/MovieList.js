@@ -2,13 +2,40 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
 import { Card } from "../components/index";
+import { SEO } from "../components/SEO";
 import { useTitle } from "../hooks/useTitle";
+
+const PAGE_META = {
+  Home: {
+    description:
+      "Discover the best new and classic films. Browse current cinema releases, critic favourites, and hidden gems — curated by Cinemate.",
+  },
+  Popular: {
+    description:
+      "The most-watched movies right now. Explore the films everyone is talking about, with ratings, genres, and full details on Cinemate.",
+  },
+  Top: {
+    description:
+      "The greatest films ever made, ranked by audience score. From timeless classics to modern masterpieces, all on Cinemate.",
+  },
+  Upcoming: {
+    description:
+      "Coming soon to cinemas near you. Preview the most anticipated upcoming movies with trailers, release dates, and cast info.",
+  },
+};
 
 const SECTION_LABELS = {
   Home: "Discover",
   Popular: "Most Popular",
   Top: "Top Rated",
   Upcoming: "Coming Soon",
+};
+
+const PAGE_URLS = {
+  Home: "/",
+  Popular: "/movies/popular",
+  Top: "/movies/top",
+  Upcoming: "/movies/upcoming",
 };
 
 const Loader = () => (
@@ -60,9 +87,18 @@ export const MovieList = ({ title, apiPath }) => {
   const presentGenreIds = new Set(rest.flatMap((m) => m.genre_ids || []));
   const filteredGenres = genres.filter((g) => presentGenreIds.has(g.id));
 
+  const pageMeta = PAGE_META[title] || {};
+  const pageUrl = PAGE_URLS[title] || "/";
+  const seoTitle = SECTION_LABELS[title] || title;
+
   if (loading) {
     return (
       <main style={{ minHeight: "90vh" }}>
+        <SEO
+          title={seoTitle}
+          description={pageMeta.description}
+          url={pageUrl}
+        />
         <Loader />
       </main>
     );
@@ -70,6 +106,11 @@ export const MovieList = ({ title, apiPath }) => {
 
   return (
     <main style={{ minHeight: "90vh" }}>
+      <SEO
+        title={seoTitle}
+        description={pageMeta.description}
+        url={pageUrl}
+      />
       {/* ── Hero ─────────────────────────────────────────── */}
       {hero && (
         <header className="relative w-full overflow-hidden" style={{ height: "85vh" }}>

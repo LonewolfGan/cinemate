@@ -1,17 +1,23 @@
 import { Link } from "react-router-dom";
 import { useTitle } from "../hooks/useTitle";
+import { SEO } from "../components/SEO";
 
 export const PageNotFound = () => {
   useTitle({ title: "Page Not Found" });
 
   return (
     <main style={{ minHeight: "90vh" }}>
+      <SEO title="404 — Page Not Found" noindex />
+
       <div className="flex flex-col items-center justify-center text-center px-6 py-32 space-y-10">
-        {/* Decorative element */}
         <div className="relative">
           <span
-            className="font-serif text-[clamp(120px,25vw,240px)] font-bold leading-none pointer-events-none select-none"
-            style={{ color: "transparent", WebkitTextStroke: "1px rgba(220,38,38,0.2)" }}
+            className="font-serif font-bold leading-none pointer-events-none select-none"
+            style={{
+              fontSize: "clamp(120px, 25vw, 240px)",
+              color: "transparent",
+              WebkitTextStroke: "1px rgba(220,38,38,0.2)",
+            }}
           >
             404
           </span>
@@ -35,8 +41,8 @@ export const PageNotFound = () => {
           to="/"
           className="inline-flex items-center gap-3 px-8 py-3.5 text-white text-[11px] tracking-[0.2em] uppercase font-semibold transition-colors"
           style={{ backgroundColor: "#dc2626" }}
-          onMouseEnter={e => e.currentTarget.style.backgroundColor = "#b91c1c"}
-          onMouseLeave={e => e.currentTarget.style.backgroundColor = "#dc2626"}
+          onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#b91c1c")}
+          onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#dc2626")}
         >
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
             <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />

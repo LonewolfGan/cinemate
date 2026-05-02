@@ -1,3 +1,16 @@
-# https://www.robotstxt.org/robotstxt.html
+# Cinemate robots.txt
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /search
+
+# Block AI training bots
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+Sitemap: https://cinemate.replit.app/sitemap.xml

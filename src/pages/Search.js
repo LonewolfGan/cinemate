@@ -1,5 +1,6 @@
 import { useFetch } from "../hooks/useFetch";
 import { Card } from "../components/Card";
+import { SEO } from "../components/SEO";
 import { useSearchParams } from "react-router-dom";
 import { useTitle } from "../hooks/useTitle";
 
@@ -12,7 +13,14 @@ export const Search = () => {
 
   return (
     <main style={{ minHeight: "90vh" }}>
-      {/* Header */}
+      {/* Search pages: noindex to avoid thin-content indexing */}
+      <SEO
+        title={`Search results for "${query}"`}
+        description={`Find movies matching "${query}" on Cinemate. Browse posters, ratings, genres and more.`}
+        url={`/search?q=${encodeURIComponent(query)}`}
+        noindex
+      />
+
       <div className="px-6 lg:px-14 pt-16 pb-12 border-b border-zinc-900">
         <div className="flex items-center gap-4 mb-4">
           <div className="w-5 h-[1px] bg-[#dc2626]" />

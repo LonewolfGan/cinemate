@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
 import { useTitle } from "../hooks/useTitle";
+import { SEO, SITE_URL } from "../components/SEO";
 
 const fmt = (n) =>
   n > 0
@@ -37,9 +38,50 @@ export const MovieDetails = () => {
   const title = movie.title || movie.original_title;
   useTitle({ title });
 
+  const year = movie.release_date?.split("-")[0];
+
+  // OG image: prefer wide backdrop for 16:9 crop, fallback to poster
+  const ogImage = movie.backdrop_path
+    ? `https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`
+    : movie.poster_path
+    ? `https://image.tmdb.org/t/p/w780${movie.poster_path}`
+    : null;
+
+  // JSON-LD Movie schema
+  const jsonLd = movie.id
+    ? {
+        "@context": "https://schema.org",
+        "@type": "Movie",
+        name: movie.original_title,
+        ...(movie.overview && { description: movie.overview }),
+        ...(movie.release_date && { datePublished: movie.release_date }),
+        ...(ogImage && { image: ogImage }),
+        url: `${SITE_URL}/movies/${id}`,
+        ...(movie.imdb_id && {
+          sameAs: `https://www.imdb.com/title/${movie.imdb_id}`,
+        }),
+        ...(movie.genres?.length > 0 && {
+          genre: movie.genres.map((g) => g.name),
+        }),
+        ...(movie.runtime > 0 && {
+          duration: `PT${Math.floor(movie.runtime / 60)}H${movie.runtime % 60}M`,
+        }),
+        ...(movie.vote_average > 0 && {
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: movie.vote_average.toFixed(1),
+            bestRating: "10",
+            worstRating: "1",
+            ratingCount: movie.vote_count,
+          },
+        }),
+      }
+    : null;
+
   if (!movie.poster_path && !movie.backdrop_path) {
     return (
       <main style={{ minHeight: "90vh" }}>
+        <SEO title="Loading…" noindex />
         <div className="flex items-center justify-center" style={{ minHeight: "70vh" }}>
           <div className="text-center space-y-4">
             <div className="relative w-14 h-14 mx-auto">
@@ -54,13 +96,24 @@ export const MovieDetails = () => {
     );
   }
 
-  const year = movie.release_date?.split("-")[0];
+  const genreNames = movie.genres?.map((g) => g.name).join(", ");
+  const seoDescription = movie.overview
+    ? `${movie.overview.slice(0, 120)}${movie.overview.length > 120 ? "…" : ""} ${genreNames ? `· ${genreNames}` : ""} ${year ? `(${year})` : ""}`.trim()
+    : undefined;
 
   return (
     <main style={{ minHeight: "90vh" }}>
+      <SEO
+        title={movie.original_title}
+        description={seoDescription}
+        image={ogImage}
+        url={`/movies/${id}`}
+        type="video.movie"
+        jsonLd={jsonLd}
+      />
+
       {/* Cinematic backdrop hero */}
       <div className="relative w-full overflow-hidden" style={{ height: "70vh" }}>
-        {/* Letterbox bars */}
         <div className="absolute top-0 left-0 right-0 h-5 bg-black z-20" />
         <div className="absolute bottom-0 left-0 right-0 h-5 bg-black z-20" />
 
@@ -80,7 +133,6 @@ export const MovieDetails = () => {
           style={{ background: "linear-gradient(to right, #080808 0%, rgba(8,8,8,0.4) 50%, transparent 100%)" }}
         />
 
-        {/* Hero text */}
         <div className="absolute inset-0 z-10 flex items-end px-6 lg:px-14 pb-14 max-w-4xl">
           <div className="space-y-4">
             <div className="flex items-center gap-3 text-[10px] uppercase tracking-[0.35em] text-[#dc2626]">
@@ -105,9 +157,7 @@ export const MovieDetails = () => {
               {movie.genres?.slice(0, 2).map((g, i) => (
                 <span key={g.id} className="flex items-center gap-2">
                   {i === 0 && <span className="w-1 h-1 rounded-full bg-zinc-700" />}
-                  <span
-                    className="border border-zinc-700 px-2 py-0.5 rounded-sm text-[10px] uppercase tracking-wider text-zinc-400"
-                  >
+                  <span className="border border-zinc-700 px-2 py-0.5 rounded-sm text-[10px] uppercase tracking-wider text-zinc-400">
                     {g.name}
                   </span>
                 </span>
@@ -117,9 +167,8 @@ export const MovieDetails = () => {
         </div>
       </div>
 
-      {/* Content section */}
+      {/* Content */}
       <section className="px-6 lg:px-14 py-16 grid grid-cols-1 lg:grid-cols-3 gap-16 max-w-7xl mx-auto">
-        {/* Poster */}
         <div className="lg:col-span-1">
           <div className="relative overflow-hidden rounded-sm" style={{ aspectRatio: "2/3", maxWidth: 380 }}>
             <img
@@ -133,14 +182,10 @@ export const MovieDetails = () => {
             />
           </div>
 
-          {/* Genre pills */}
           {movie.genres?.length > 0 && (
             <div className="mt-6 flex flex-wrap gap-2">
               {movie.genres.map((g) => (
-                <span
-                  key={g.id}
-                  className="text-[10px] uppercase tracking-widest px-3 py-1.5 border border-zinc-800 text-zinc-500"
-                >
+                <span key={g.id} className="text-[10px] uppercase tracking-widest px-3 py-1.5 border border-zinc-800 text-zinc-500">
                   {g.name}
                 </span>
               ))}
@@ -148,34 +193,35 @@ export const MovieDetails = () => {
           )}
         </div>
 
-        {/* Details */}
         <div className="lg:col-span-2 space-y-10">
-          {/* Rating */}
           <div>
             <p className="text-[10px] uppercase tracking-[0.3em] text-zinc-600 mb-3">Audience Score</p>
             <StarRating score={movie.vote_average} />
             <p className="text-xs text-zinc-600 mt-1.5">{movie.vote_count?.toLocaleString()} reviews</p>
           </div>
 
-          {/* Divider */}
-          <div
-            className="h-[1px] w-full"
-            style={{ background: "linear-gradient(to right, #dc2626, transparent)" }}
-          />
+          <div className="h-[1px] w-full" style={{ background: "linear-gradient(to right, #dc2626, transparent)" }} />
 
-          {/* Overview */}
           <div>
             <p className="text-[10px] uppercase tracking-[0.3em] text-zinc-600 mb-4">Synopsis</p>
             <p className="text-zinc-400 leading-relaxed text-sm md:text-base">{movie.overview}</p>
           </div>
 
-          {/* Stats grid */}
           <div className="grid grid-cols-2 gap-x-10 gap-y-7">
             {[
-              { label: "Director", value: "—" },
               { label: "Runtime", value: fmtRuntime(movie.runtime) },
               { label: "Release Date", value: movie.release_date || "—" },
-              { label: "IMDB", value: movie.imdb_id || "—" },
+              { label: "IMDB", value: movie.imdb_id ? (
+                <a
+                  href={`https://www.imdb.com/title/${movie.imdb_id}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-[#dc2626] hover:text-white transition-colors"
+                >
+                  {movie.imdb_id} ↗
+                </a>
+              ) : "—" },
+              { label: "Vote Count", value: movie.vote_count?.toLocaleString() || "—" },
               { label: "Budget", value: fmt(movie.budget) },
               { label: "Revenue", value: fmt(movie.revenue) },
             ].map(({ label, value }) => (
@@ -186,7 +232,6 @@ export const MovieDetails = () => {
             ))}
           </div>
 
-          {/* Back link */}
           <div className="pt-6">
             <Link
               to="/"
