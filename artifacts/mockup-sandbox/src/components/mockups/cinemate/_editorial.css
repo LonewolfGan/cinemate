@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Space+Grotesk:wght@300..700&display=swap');
+
+.editorial-root {
+  --font-display: 'Playfair Display', serif;
+  --font-sans: 'Space Grotesk', sans-serif;
+  
+  --bg: #0a0a0a;
+  --fg: #f5f5f5;
+  --accent: #ff3300; /* Deep electric red */
+  
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+}
+
+.editorial-root .font-display {
+  font-family: var(--font-display);
+}
+
+.editorial-root .text-accent {
+  color: var(--accent);
+}
+.editorial-root .bg-accent {
+  background-color: var(--accent);
+}
+.editorial-root .border-accent {
+  border-color: var(--accent);
+}
