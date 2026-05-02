@@ -26,7 +26,7 @@ if (fs.existsSync(envPath)) {
   }
 }
 
-const SITE_URL = "https://cinemate.replit.app";
+const SITE_URL = "https://cinematelone.netlify.app";
 const API_KEY = process.env.REACT_APP_API_KEY;
 const OUTPUT = path.resolve(__dirname, "../public/sitemap.xml");
 

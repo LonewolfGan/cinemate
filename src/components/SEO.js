@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 
 export const SITE_NAME = "Cinemate";
-export const SITE_URL = "https://cinemate.replit.app";
+export const SITE_URL = "https://cinematelone.netlify.app";
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
 export const DEFAULT_DESCRIPTION =
   "Discover, explore, and fall in love with cinema. Premium movie discovery powered by TMDB — browse popular films, top rated classics, and upcoming releases.";

@@ -13,4 +13,4 @@ Disallow: /
 User-agent: Google-Extended
 Disallow: /
 
-Sitemap: https://cinemate.replit.app/sitemap.xml
+Sitemap: https://cinematelone.netlify.app/sitemap.xml
